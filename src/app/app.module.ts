@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ConsignaComponent } from './consigna/consigna.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TodosService } from './todos.service';
-import { TodosComponent } from './dog-facts/todos.component';
+import { TodosComponent } from './todos/todos.component';
 
 @NgModule({
   declarations: [
