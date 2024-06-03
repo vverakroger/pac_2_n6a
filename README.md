@@ -1,3 +1,7 @@
+# Importante:
+
+- Actualizar https://docs.google.com/spreadsheets/d/16Kuet_YVqUdn6X4yKmhsPNW7hq6ODpeYW9LEnjpeZOU/edit?usp=sharing una vez que terminen
+
 # PAC22024S1
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
