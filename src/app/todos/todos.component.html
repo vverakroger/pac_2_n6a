@@ -2,7 +2,55 @@
   <h1 class="mt-5">Realizar la consigna debajo de este mensaje</h1>
 </div>
 
-<!-- Html faltante -->
-<div>
-  <button class="btn btn-primary" (click)="randomMethod()">Search</button>
+<div class="col-md-3">
+  <form class="d-flex" (submit)="filtrarTodos()">
+    <input class="form-control me-2 mb-1" type="search" placeholder="Todos Filtro" aria-label="Search" [(ngModel)]="todosFiltro" [ngModelOptions]="{ standalone: true }">
+    <button class="btn btn-dark btn-block mb-1" type="submit">Filtrar</button>
+  </form>
+</div>
+
+<div *ngIf="error" class="alert alert-danger">
+  {{ error }}
+</div>
+
+<table class="table table-striped mt-3">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Completed</th>
+      <th scope="col">Información</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todosFiltrado">
+      <td>{{ todo.id }}</td>
+      <td>{{ todo.title }}</td>
+      <td>{{ todo.completed ? 'Yes' : 'No' }}</td>
+      <td>
+        <a href="#" class="btn btn-dark btn-block mb-1 edit" (click)="verDetalles(todo)">Info</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal Todo-->
+<div *ngIf="mostrarModal">
+  <div id="verTodo" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Detalles del Todo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="cerrarModal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p><strong>ID:</strong> {{ detalleTodo?.id }}</p>
+          <p><strong>Título:</strong> {{ detalleTodo?.title }}</p>
+          <p><strong>Completado:</strong> {{ detalleTodo?.completed ? 'Sí' : 'No' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

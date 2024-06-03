@@ -7,8 +7,7 @@ import { TodosComponent } from './todos/todos.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'todos', component: TodosComponent },
-  { path: 'consigna', component: ConsignaComponent },
-  { path: '**', component: HomeComponent },
+  { path: 'consigna', component: ConsignaComponent }
 ];
 
 @NgModule({
